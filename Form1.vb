@@ -68,6 +68,14 @@ Public Class Form1
         For i As Integer = 0 To ListBox2.Items.Count - 1
             camposSQL &= "[" & ListBox2.Items(i).ToString() & "],"
         Next
+        ' Otar forma de hacerlo 
+        ' For i As Integer = 0 To ListBox2.Items.Count - 1
+         'camposSQL &= "[" & ListBox2.Items(i).ToString() & "]"
+          'If i < ListBox2.Items.Count - 1 Then
+           '  camposSQL &= ","
+          ' End If
+          'Next
+        
         camposSQL = camposSQL.TrimEnd(","c) ' Elimina la última coma
 
         ' Construcción del patrón LIKE según el tipo de búsqueda
