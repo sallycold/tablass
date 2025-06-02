@@ -167,13 +167,15 @@ Public Class Form1
         ComboBox1.Text = "Seleccione el campo a buscar"
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Dim items As String = ""
-        For i As Integer = 0 To ListBox1.Items.Count - 1
-            item =  ListBox1.Items(i).ToString() 
-            ListBox2.Items.Add(item)
-        Next
-
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click    
+Dim items As String = ""
+For i As Integer = 0 To ListBox2.Items.Count - 1
+    Dim item As String = ListBox2.Items(i).ToString()
+    items &= item & ", " ' Concatenar con una coma
+    ListBox1.Items.Add(item)
+    ListBox2.Items.RemoveAt(i)
+    i -= 1
+Next
     End Sub
     Private Sub BUSQUEDA()
        
