@@ -152,9 +152,14 @@ Public Class Form1
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs)
-        ListBox1.Items.Clear()
-        ListBox2.Items.Clear()
-        DataGridView1.Visible = False
+        ' selecciona todo lo que hay en el lisbox y lo mete en el otro hay que revisar 
+           Dim items As String = ""
+        For i As Integer = 0 To ListBox1.Items.Count - 1
+            item =  ListBox1.Items(i).ToString() 
+            ListBox2.Items.Add(item)
+            ListBox1.items(i).Remove()
+
+        Next
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
@@ -163,7 +168,11 @@ Public Class Form1
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        End
+        Dim items As String = ""
+        For i As Integer = 0 To ListBox1.Items.Count - 1
+            item =  ListBox1.Items(i).ToString() 
+            ListBox2.Items.Add(item)
+        Next
 
     End Sub
     Private Sub BUSQUEDA()
