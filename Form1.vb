@@ -153,13 +153,10 @@ Public Class Form1
 
     Private Sub Button3_Click(sender As Object, e As EventArgs)
         ' selecciona todo lo que hay en el lisbox y lo mete en el otro hay que revisar 
-           Dim items As String = ""
-        For i As Integer = 0 To ListBox1.Items.Count - 1
-            item =  ListBox1.Items(i).ToString() 
-            ListBox2.Items.Add(item)
-            ListBox1.items(i).Remove()
-
-        Next
+           For i As Integer = ListBox2.Items.Count - 1 To 0 Step -1
+      ListBox1.Items.Add(ListBox2.Items(i))
+      ListBox2.Items.RemoveAt(i)
+  Next
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
@@ -168,14 +165,10 @@ Public Class Form1
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click    
-Dim items As String = ""
-For i As Integer = 0 To ListBox2.Items.Count - 1
-    Dim item As String = ListBox2.Items(i).ToString()
-    items &= item & ", " ' Concatenar con una coma
-    ListBox1.Items.Add(item)
-    ListBox2.Items.RemoveAt(i)
-    i -= 1
-Next
+ For i As Integer = ListBox1.Items.Count - 1 To 0 Step -1
+     ListBox2.Items.Add(ListBox1.Items(i))
+     ListBox1.Items.RemoveAt(i)
+ Next
     End Sub
     Private Sub BUSQUEDA()
        
